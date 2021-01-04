@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Definition
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,5 +13,15 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+
+    <ion-row>
+      <ion-col>Name</ion-col>
+      <ion-col>Definition</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let item of definition;">
+      <ion-col>{{ item.short }}</ion-col>
+      <ion-col>{{ item.desc }}</ion-col>
+    </ion-row>
+
+ 
 </ion-content>
