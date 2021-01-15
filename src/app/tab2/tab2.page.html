@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" >
   <ion-toolbar>
     <ion-title>
       Converter
@@ -14,17 +14,30 @@
   </ion-header>
 
   <ion-card >
+      <!--Added distance conversion card. This card can be collpsed when clicked on view button-->
+
     <ion-item color="dark">
       <ion-icon name="pin" slot="start"></ion-icon>
       <ion-label>Convert Distance</ion-label>
       <ion-button fill="outline" slot="end" (click)="hide()" color="success">View</ion-button>
     </ion-item>
-    <ion-card-content [hidden]="shouldHide"> 
-      <ion-label>kilometers:</ion-label>
-      <ion-input type="number" [(ngModel)]="kilometer"></ion-input>
-      <ion-label>miles:</ion-label>
-      <ion-input type="number" [(ngModel)]="mile"></ion-input>
-      <ion-button fill="outline" slot="end" (click)="calculate()" color="danger">Convert</ion-button>
+    <ion-card-content [hidden]="shouldHide">
+
+      <ion-grid>
+        <div class="container"><ion-label>Kilometers</ion-label></div>
+        <ion-row justify-content-center >
+          <ion-input type="number" [ngModel]="kilometer" (ngModelChange)="kmtomi($event)" ></ion-input>
+        </ion-row>
+        
+        <div class="container"> <ion-icon name="git-compare-sharp"></ion-icon></div>
+       
+        <ion-row justify-content-center>
+          <ion-input type="number" [ngModel]="mile" (ngModelChange)="mitokm($event)" ></ion-input>
+        </ion-row>
+
+        <div class="container"> <ion-label>Miles</ion-label></div>
+    
+      </ion-grid>
     </ion-card-content>
   </ion-card >
   

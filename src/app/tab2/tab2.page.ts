@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
   shouldHide: boolean = true;
-  kilometer: number;
-  mile: number;
+  kilometer: string;
+  mile: string;
 
   constructor() {}
 
@@ -27,10 +27,14 @@ export class Tab2Page {
     console.log("card is hidden");
   }
 
-  calculate(){
-      this.mile = this.kilometer * 0.621371;
-      console.log(this.mile);
+  kmtomi(kmValue){
 
+      this.mile = (kmValue * 0.621371).toFixed(2);
+
+      console.log(this.mile);
+  }
+  mitokm(miValue){
+    this.kilometer = (miValue * 1.60934).toFixed(2);
   }
 
 }

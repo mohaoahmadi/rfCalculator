@@ -1,0 +1,18 @@
+ion-input{
+       border: solid 1px rgb(0, 0, 0);
+       border-radius: 12px;
+       padding-left: 10px;
+       width: 100px;
+       margin: 10px;
+       text-align: center;
+    }
+
+
+ion-textarea{
+       border: solid 1px rgb(0, 0, 0);
+       border-radius: 12px;
+    }
+.container {
+        display: flex;
+        justify-content: center;
+      }
