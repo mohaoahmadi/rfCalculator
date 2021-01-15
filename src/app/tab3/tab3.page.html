@@ -9,19 +9,21 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="medium">List of Definitions</ion-title>
     </ion-toolbar>
   </ion-header>
 
 
-    <ion-row>
-      <ion-col>Name</ion-col>
-      <ion-col>Definition</ion-col>
-    </ion-row>
-    <ion-row *ngFor="let item of definition;">
-      <ion-col>{{ item.short }}</ion-col>
-      <ion-col>{{ item.desc }}</ion-col>
-    </ion-row>
 
+    <ion-grid>
+      <ion-row >
+        <ion-col class="bgcolor" size="3" text-center><b>Name</b></ion-col>
+        <ion-col class="bgcolor" size="9" text-center><b>Definition</b></ion-col>
+      </ion-row>
+      <ion-row class="rowbgcolor" *ngFor="let item of definition; index as i">
+        <ion-col  size="3" text-center> {{ item.short }}</ion-col>
+        <ion-col  size="9" text-center> {{ item.desc }}</ion-col>
+      </ion-row>
+    </ion-grid>
  
 </ion-content>
