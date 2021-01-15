@@ -17,10 +17,10 @@
 
     <ion-grid>
       <ion-row >
-        <ion-col class="bgcolor" size="3" text-center><b>Name</b></ion-col>
-        <ion-col class="bgcolor" size="9" text-center><b>Definition</b></ion-col>
+        <ion-col class="bgcolor ion-text-center" size="3" text-center><b>Name</b></ion-col>
+        <ion-col class="bgcolor ion-text-center" size="9" text-center><b>Definition</b></ion-col>
       </ion-row>
-      <ion-row class="rowbgcolor" *ngFor="let item of definition; index as i">
+      <ion-row class="rowbgcolor ion-text-center" *ngFor="let item of definition; index as i">
         <ion-col  size="3" text-center> {{ item.short }}</ion-col>
         <ion-col  size="9" text-center> {{ item.desc }}</ion-col>
       </ion-row>
