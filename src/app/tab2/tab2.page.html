@@ -9,9 +9,24 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="medium">Converter</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-card >
+    <ion-item color="dark">
+      <ion-icon name="pin" slot="start"></ion-icon>
+      <ion-label>Convert Distance</ion-label>
+      <ion-button fill="outline" slot="end" (click)="hide()" color="success">View</ion-button>
+    </ion-item>
+    <ion-card-content [hidden]="shouldHide"> 
+      <ion-label>kilometers:</ion-label>
+      <ion-input type="number" [(ngModel)]="kilometer"></ion-input>
+      <ion-label>miles:</ion-label>
+      <ion-input type="number" [(ngModel)]="mile"></ion-input>
+      <ion-button fill="outline" slot="end" (click)="calculate()" color="danger">Convert</ion-button>
+    </ion-card-content>
+  </ion-card >
+  
+
 </ion-content>
