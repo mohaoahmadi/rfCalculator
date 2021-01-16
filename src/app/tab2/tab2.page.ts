@@ -10,6 +10,8 @@ export class Tab2Page {
   shouldHide: boolean = true;
   kilometer: string;
   mile: string;
+  milliwatt: string;
+  dBm: string;
 
   constructor() {}
 
@@ -36,5 +38,15 @@ export class Tab2Page {
   mitokm(miValue){
     this.kilometer = (miValue * 1.60934).toFixed(2);
   }
+
+  mwtodb(mwValue){
+
+    this.dBm = (Math.log10(mwValue) * 10).toFixed(2);
+
+    console.log(this.dBm);
+}
+dbtomw(dbValue){
+  this.milliwatt = Math.pow(10, dbValue/10).toFixed(2);
+}
 
 }

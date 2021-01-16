@@ -9,12 +9,12 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="medium">Converter</ion-title>
+      <ion-title size="medium">Convert</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-card >
-      <!--Added distance conversion card. This card can be collpsed when clicked on view button-->
+      <!--Distance conversion card. This card can be collapsed when clicked on view button-->
 
     <ion-item color="dark">
       <ion-icon name="pin" slot="start"></ion-icon>
@@ -40,6 +40,34 @@
       </ion-grid>
     </ion-card-content>
   </ion-card >
+
+  <ion-card >
+    <!-- Transmission conversion card. This card can be collpsed when clicked on view button-->
+
+  <ion-item color="dark">
+    <ion-icon name="radio-outline" slot="start"></ion-icon>
+    <ion-label>Convert Tx Power</ion-label>
+    <ion-button fill="outline" slot="end" (click)="hide()" color="success">View</ion-button>
+  </ion-item>
+  <ion-card-content [hidden]="shouldHide">
+
+    <ion-grid>
+      <div class="container"><ion-label>MilliWatts</ion-label></div>
+      <ion-row justify-content-center >
+        <ion-input type="number" [ngModel]="milliwatt" (ngModelChange)="mwtodb($event)" ></ion-input>
+      </ion-row>
+      
+      <div class="container"> <ion-icon name="git-compare-sharp"></ion-icon></div>
+     
+      <ion-row justify-content-center>
+        <ion-input type="number" [ngModel]="dBm" (ngModelChange)="dbtomw($event)" ></ion-input>
+      </ion-row>
+
+      <div class="container"> <ion-label>dBm</ion-label></div>
+  
+    </ion-grid>
+  </ion-card-content>
+</ion-card >
   
 
 </ion-content>
