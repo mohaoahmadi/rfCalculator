@@ -19,9 +19,10 @@
     <ion-item color="dark">
       <ion-icon name="pin" slot="start"></ion-icon>
       <ion-label>Convert Distance</ion-label>
-      <ion-button fill="outline" slot="end" (click)="hide()" color="success">View</ion-button>
+      <ion-button fill="outline" slot="end" (click)="hide('distCard')" color="success">View</ion-button>
     </ion-item>
-    <ion-card-content [hidden]="shouldHide">
+    <div class="container">
+    <ion-card-content *ngIf="distCardHide">
 
       <ion-grid>
         <div class="container"><ion-label>Kilometers</ion-label></div>
@@ -39,6 +40,7 @@
     
       </ion-grid>
     </ion-card-content>
+  </div>
   </ion-card >
 
   <ion-card >
@@ -47,9 +49,11 @@
   <ion-item color="dark">
     <ion-icon name="radio-outline" slot="start"></ion-icon>
     <ion-label>Convert Tx Power</ion-label>
-    <ion-button fill="outline" slot="end" (click)="hide()" color="success">View</ion-button>
+    <!-- TODO: work on the hidden logic for ion-card-content-->
+    <ion-button fill="outline" slot="end" (click)="hide('txCard')" color="success" id="Tx">View</ion-button>
   </ion-item>
-  <ion-card-content [hidden]="shouldHide">
+  <div class="container">
+  <ion-card-content *ngIf="txCardHide">
 
     <ion-grid>
       <div class="container"><ion-label>MilliWatts</ion-label></div>
@@ -67,7 +71,9 @@
   
     </ion-grid>
   </ion-card-content>
+</div>
 </ion-card >
+
   
 
 </ion-content>
